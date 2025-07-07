@@ -14,7 +14,7 @@ resultfont = ctk.CTkFont = "Calibri", 18
 # conversion function
 def convert(cur):
      if cur == "USD":
-          Vresult = int(origincoinentry.get()) / USD
+          result = int(origincoinentry.get()) / USD
      elif cur == "JPN":
           result = int(origincoinentry.get()) / JPN
      elif cur == "EUR":
@@ -37,7 +37,9 @@ modebox = ctk.CTkComboBox(
     values = ["Light", "Dark"],
     command = setmode
 )
-modebox.pack(pady = 10)
+modetitlelabel = ctk.CTkLabel(app, text="Set Appearece Mode:")
+modetitlelabel.pack(pady=10)
+modebox.pack(pady = .1)
 
 # Currency label/entry
 origincoinlabel  = ctk.CTkLabel(app, text="Insert the origin Currency:")
@@ -50,7 +52,7 @@ origincoinlabel.pack(pady=10)
 origincoinentry.pack(pady=10)
 
 destinycoinlabel.pack(pady=10)
-currencyresultlabel.pack(pady=10)
+currencyresultlabel.pack(pady=22)
 
 # Currency Selection Box
 currencybox = ctk.CTkComboBox(
